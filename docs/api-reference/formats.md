@@ -148,3 +148,10 @@ Content-Type: application/json
 ---
 
 [Next: Rate Limiting and Throttling](./rate-limiting.md)
+
+---
+
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/api-reference/endpoints" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: Endpoints</a>
+  <a href="#/api-reference/rate-limiting" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: Rate Limiting →</a>
+</div>

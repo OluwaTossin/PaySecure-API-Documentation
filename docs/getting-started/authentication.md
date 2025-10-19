@@ -41,4 +41,8 @@ Content-Type: application/json
 
 ---
 
-[Next: API Architecture Diagram](./architecture.md)
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/getting-started/introduction" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: Introduction</a>
+  <a href="#/getting-started/architecture" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: API Architecture →</a>
+</div>
+

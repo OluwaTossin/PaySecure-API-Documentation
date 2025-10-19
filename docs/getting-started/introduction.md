@@ -19,4 +19,7 @@ The primary purpose of the PaySecure API is to provide a robust and secure solut
 
 ---
 
-[Next: Authentication and Authorization Methods](./authentication.md)
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <div></div>
+  <a href="#/getting-started/authentication" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: Authentication and Authorization →</a>
+</div>

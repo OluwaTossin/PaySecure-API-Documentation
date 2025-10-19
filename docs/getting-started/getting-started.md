@@ -104,4 +104,8 @@ curl -X POST https://api.paysecure.com/v1/transactions \
 
 ---
 
-[Next: API Endpoints and Methods](api-reference/endpoints.md)
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/getting-started/architecture" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: API Architecture</a>
+  <a href="#/api-reference/endpoints" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: API Endpoints →</a>
+</div>
+
