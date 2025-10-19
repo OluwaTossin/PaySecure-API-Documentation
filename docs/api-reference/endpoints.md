@@ -2,44 +2,245 @@
 
 PaySecure API provides a comprehensive set of endpoints for payment processing, transaction management, and user authentication.
 
-## Core Endpoints
+## Detailed Explanation of Each Endpoint
 
-### 1. Authentication
-- **POST /auth/login**: Authenticate user and obtain access token
-- **POST /auth/logout**: Invalidate user session
+### User Authentication
 
-### 2. Transactions
-- **POST /transactions**: Create a new transaction
-- **GET /transactions/{id}**: Retrieve transaction details
-- **GET /transactions**: List all transactions
-- **PUT /transactions/{id}**: Update transaction
-- **DELETE /transactions/{id}**: Cancel transaction
+The user authentication endpoint is used to authenticate users and generate access tokens.
 
-### 3. Payments
-- **POST /payments**: Process a payment
-- **GET /payments/{id}**: Get payment status
+**Endpoint:** `POST /auth/login`
 
-### 4. Refunds & Chargebacks
-- **POST /refunds**: Initiate a refund
-- **GET /refunds/{id}**: Get refund status
-- **POST /chargebacks**: Initiate a chargeback
-- **GET /chargebacks/{id}**: Get chargeback status
-
-### 5. Transaction History
-- **GET /transactions/history**: Retrieve transaction history
-
-## Example Request
+**Request:**
 ```http
-POST /transactions HTTP/1.1
+POST /auth/login HTTP/1.1
 Host: api.paysecure.com
-Authorization: Bearer your_api_key_here
 Content-Type: application/json
 
 {
-  "amount": 100.00,
-  "currency": "USD",
-  "recipient": "user@example.com"
+  "username": "user@example.com",
+  "password": "your_password"
 }
+```
+
+**Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "access_token": "your_access_token",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+```
+
+**Diagram of Request/Response Flow:**
+```
+Client (App) ---> [POST /auth/login] ---> PaySecure API ---> Authentication Service
+     |                  |                         |                      |
+     |                  |                         |                      |
+     |<------ Response with Token ---------------|                      |
+```
+
+### Transaction Creation
+
+The transaction creation endpoint is used to create new transactions.
+
+**Endpoint:** `POST /transactions`
+
+**Request:**
+```http
+POST /transactions HTTP/1.1
+Host: api.paysecure.com
+Authorization: Bearer your_access_token
+Content-Type: application/json
+
+{
+  "amount": 1000,
+  "currency": "USD",
+  "description": "Test Transaction",
+  "payment_method": {
+    "type": "credit_card",
+    "card_number": "4111111111111111",
+    "expiry_month": "12",
+    "expiry_year": "2025",
+    "cvv": "123"
+  }
+}
+```
+
+**Response:**
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "transaction_id": "txn_123456789",
+  "status": "pending",
+  "amount": 1000,
+  "currency": "USD",
+  "description": "Test Transaction",
+  "payment_method": {
+    "type": "credit_card",
+    "card_number": "4111111111111111",
+    "expiry_month": "12",
+    "expiry_year": "2025",
+    "cvv": "123"
+  },
+  "created_at": "2023-07-15T12:34:56Z"
+}
+```
+
+**Diagram of Request/Response Flow:**
+```
+Client (App) ---> [POST /transactions] ---> PaySecure API ---> Payment Gateway
+     |                     |                         |                     |
+     |                     |                         |                     |
+     |<------ Response with Transaction Details ----|                     |
+```
+
+### Payment Processing
+
+The payment processing endpoint is used to process payments for existing transactions.
+
+**Endpoint:** `POST /transactions/{transaction_id}/process`
+
+**Request:**
+```http
+POST /transactions/txn_123456789/process HTTP/1.1
+Host: api.paysecure.com
+Authorization: Bearer your_access_token
+Content-Type: application/json
+
+{
+  "payment_method": {
+    "type": "credit_card",
+    "card_number": "4111111111111111",
+    "expiry_month": "12",
+    "expiry_year": "2025",
+    "cvv": "123"
+  }
+}
+```
+
+**Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "transaction_id": "txn_123456789",
+  "status": "success",
+  "amount": 1000,
+  "currency": "USD",
+  "description": "Test Transaction",
+  "payment_method": {
+    "type": "credit_card",
+    "card_number": "4111111111111111",
+    "expiry_month": "12",
+    "expiry_year": "2025",
+    "cvv": "123"
+  },
+  "processed_at": "2023-07-15T12:35:00Z"
+}
+```
+
+**Diagram of Request/Response Flow:**
+```
+Client (App) ---> [POST /transactions/{transaction_id}/process] ---> PaySecure API ---> Payment Gateway
+     |                                 |                             |                     |
+     |                                 |                             |                     |
+     |<------ Response with Payment Status -------------------------|                     |
+```
+
+### Refunds and Chargebacks
+
+The refunds and chargebacks endpoint is used to handle refunds and chargebacks for transactions.
+
+**Endpoint:** `POST /transactions/{transaction_id}/refund`
+
+**Request:**
+```http
+POST /transactions/txn_123456789/refund HTTP/1.1
+Host: api.paysecure.com
+Authorization: Bearer your_access_token
+Content-Type: application/json
+
+{
+  "amount": 1000,
+  "reason": "Customer request"
+}
+```
+
+**Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "transaction_id": "txn_123456789",
+  "status": "refunded",
+  "amount": 1000,
+  "currency": "USD",
+  "description": "Test Transaction",
+  "refund_reason": "Customer request",
+  "refunded_at": "2023-07-15T12:36:00Z"
+}
+```
+
+**Diagram of Request/Response Flow:**
+```
+Client (App) ---> [POST /transactions/{transaction_id}/refund] ---> PaySecure API ---> Payment Gateway
+     |                                  |                             |                     |
+     |                                  |                             |                     |
+     |<------ Response with Refund Status --------------------------|                     |
+```
+
+### Transaction History
+
+The transaction history endpoint is used to retrieve the history of transactions.
+
+**Endpoint:** `GET /transactions`
+
+**Request:**
+```http
+GET /transactions HTTP/1.1
+Host: api.paysecure.com
+Authorization: Bearer your_access_token
+Content-Type: application/json
+```
+
+**Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "transaction_id": "txn_123456789",
+    "status": "success",
+    "amount": 1000,
+    "currency": "USD",
+    "description": "Test Transaction",
+    "created_at": "2023-07-15T12:34:56Z"
+  },
+  {
+    "transaction_id": "txn_987654321",
+    "status": "refunded",
+    "amount": 500,
+    "currency": "USD",
+    "description": "Refunded Transaction",
+    "created_at": "2023-07-15T11:20:30Z"
+  }
+]
+```
+
+**Diagram of Request/Response Flow:**
+```
+Client (App) ---> [GET /transactions] ---> PaySecure API ---> Transaction Database
+     |                  |                          |                       |
+     |                  |                          |                       |
+     |<------ Response with Transaction History -------------------------|
 ```
 
 ---
