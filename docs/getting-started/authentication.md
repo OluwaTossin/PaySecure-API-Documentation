@@ -3,6 +3,9 @@
 To ensure secure access to the PaySecure API, all requests must be authenticated and authorized. PaySecure API uses API keys for authentication and supports both user-level and application-level authorization.
 
 ## API Key Generation
+
+![API Key Page](https://github.com/OluwaTossin/PaySecure-API-Documentation-Images/raw/main/API%20Key%20Page.png)
+
 1. Log in to PaySecure Dashboard:
    - Navigate to the PaySecure dashboard and log in with your credentials.
 2. Generate API Key:
