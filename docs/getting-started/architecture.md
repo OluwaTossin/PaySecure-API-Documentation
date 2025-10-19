@@ -6,4 +6,4 @@ This architectural diagram illustrates the logical flow of the PaySecure API sys
 
 ---
 
-[Next: Getting Started Guide](../getting-started/)
+[Next: Getting Started Guide](getting-started/)

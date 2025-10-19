@@ -14,9 +14,9 @@
 
 ## Additional Resources
 - [API Documentation Homepage](../../README.md)
-- [Getting Started Guide](../getting-started/getting-started.md)
-- [API Reference](../api-reference/endpoints.md)
-- [Best Practices](../guides/best-practices.md)
+- [Getting Started Guide](getting-started/getting-started.md)
+- [API Reference](api-reference/endpoints.md)
+- [Best Practices](guides/best-practices.md)
 - [Support Guide](./support.md)
 
 ---

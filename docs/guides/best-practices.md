@@ -20,9 +20,9 @@ Follow these best practices to ensure efficient, secure, and reliable integratio
 - Implement caching for frequently accessed data
 
 ## Support and Troubleshooting
-- Review the [Support Guide](../support/support.md) for help
+- Review the [Support Guide](support/support.md) for help
 - Contact PaySecure support for urgent issues
 
 ---
 
-[Next: Appendices](../support/appendices.md)
+[Next: Appendices](support/appendices.md)

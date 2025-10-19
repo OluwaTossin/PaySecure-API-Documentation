@@ -98,10 +98,10 @@ curl -X POST https://api.paysecure.com/v1/transactions \
 ```
 
 ## Next Steps
-- Explore available endpoints in the [API Reference](../api-reference/endpoints.md)
-- Review best practices in the [Guides](../guides/best-practices.md)
-- Learn about security in the [Security Considerations](../guides/security.md)
+- Explore available endpoints in the [API Reference](api-reference/endpoints.md)
+- Review best practices in the [Guides](guides/best-practices.md)
+- Learn about security in the [Security Considerations](guides/security.md)
 
 ---
 
-[Next: API Endpoints and Methods](../api-reference/endpoints.md)
+[Next: API Endpoints and Methods](api-reference/endpoints.md)
