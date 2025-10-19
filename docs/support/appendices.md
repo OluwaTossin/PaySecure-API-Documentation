@@ -22,3 +22,8 @@
 ---
 
 End of documentation.
+
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/support/support" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: Support</a>
+  <span style="color: #ccc;">Next →</span>
+</div>

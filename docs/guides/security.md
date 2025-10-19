@@ -19,3 +19,8 @@ PaySecure API is designed with robust security features to protect sensitive pay
 ---
 
 [Next: Best Practices](./best-practices.md)
+
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/api-reference/rate-limiting" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: Rate Limiting</a>
+  <a href="#/guides/best-practices" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: Best Practices →</a>
+</div>

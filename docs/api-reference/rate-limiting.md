@@ -31,3 +31,8 @@ Content-Type: application/json
 ---
 
 [Next: Security Considerations](./security.md)
+
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/api-reference/formats" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: Data Formats</a>
+  <a href="#/guides/security" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: Security Considerations →</a>
+</div>

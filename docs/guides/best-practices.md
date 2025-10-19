@@ -26,3 +26,8 @@ Follow these best practices to ensure efficient, secure, and reliable integratio
 ---
 
 [Next: Appendices](support/appendices.md)
+
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 20px 0; border-top: 2px solid #eee;">
+  <a href="#/guides/security" style="text-decoration: none; color: #2c3e50; font-weight: 500;">← Previous: Security Considerations</a>
+  <a href="#/support/support" style="text-decoration: none; color: #2c3e50; font-weight: 500;">Next: Support →</a>
+</div>
